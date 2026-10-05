@@ -1,0 +1,7 @@
+# Рабочие материалы — не публикуются
+_src/
+cv/cv_preview.png
+cv/__pycache__/
+*.pyc
+Thumbs.db
+desktop.ini

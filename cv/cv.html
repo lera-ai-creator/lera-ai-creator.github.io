@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Лера Черногубова — резюме</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+  /* Резюме на одну страницу A4. PDF: python build_cv.py */
+  @page { size: A4; margin: 0; }
+  :root {
+    --ink: #0f1a4d; --text: #283055; --muted: #5d6585; --blue: #2348b8;
+    --orange: #f26a21; --paper: #fbfcfe; --grid: #e3ebf6;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    width: 210mm; height: 297mm; overflow: hidden;
+    font: 9.6pt/1.45 'Manrope', Arial, sans-serif; color: var(--text);
+    background: #fff;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page { display: grid; grid-template-columns: 66mm 1fr; height: 297mm; }
+  .side { grid-column: 1; grid-row: 1; }
+  .main { grid-column: 2; grid-row: 1; }
+  .nw { white-space: nowrap; }
+
+  /* ---- левая колонка ---- */
+  .side {
+    padding: 11mm 7mm 8mm 9mm; color: #e7ebf8;
+    background:
+      linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px),
+      var(--ink);
+    background-size: 6mm 6mm;
+  }
+  .photo {
+    width: 34mm; margin: 0 0 4mm 6mm; padding: 2mm 2mm 7mm; background: #fff;
+    transform: rotate(-3deg); box-shadow: 0 2mm 5mm rgba(0,0,0,.35); position: relative;
+  }
+  .photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .photo::before {
+    content: ""; position: absolute; top: -3mm; left: 12mm; width: 18mm; height: 5mm;
+    background: rgba(214,186,140,.85); transform: rotate(-5deg);
+  }
+  .side h3 {
+    margin: 4.6mm 0 1.8mm; font: 800 8pt 'Unbounded', sans-serif; letter-spacing: .08em;
+    text-transform: uppercase; color: #ffe66b;
+  }
+  .side ul { margin: 0; padding: 0; list-style: none; }
+  .side li { margin: 0 0 1mm; }
+  .side small { display: block; color: #aeb7d8; font-size: 7.6pt; }
+  .skills { font-size: 8.6pt; line-height: 1.3; }
+  .contacts a { color: #fff; text-decoration: none; font-weight: 700; font-size: 8.8pt; }
+  .chips { display: flex; flex-wrap: wrap; gap: 1.4mm; }
+  .chips li { margin: 0; padding: .6mm 2.2mm; border: .3mm solid rgba(255,255,255,.45); border-radius: 3mm; font-size: 8pt; color: #fff; }
+  .chips.classic li { background: #fff; color: var(--ink); border-color: #fff; font-weight: 700; }
+  .status {
+    margin-top: 5mm; padding: 2.5mm 3mm; background: #fff; color: var(--ink); border-radius: 2mm;
+    font-weight: 700; font-size: 8.4pt; line-height: 1.35; transform: rotate(-1deg);
+  }
+  .status i { display: inline-block; width: 2.2mm; height: 2.2mm; border-radius: 50%; background: #22a45d; margin-right: 1.5mm; }
+
+  /* ---- правая колонка ---- */
+  .main {
+    padding: 13mm 12mm 10mm 11mm;
+    background:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+      var(--paper);
+    background-size: 6mm 6mm;
+  }
+  h1 { margin: 0; font: 900 25pt/1 'Unbounded', sans-serif; color: var(--ink); letter-spacing: -.02em; }
+  .role { margin: 3mm 0 0; font: 500 12pt 'Unbounded', sans-serif; color: var(--ink); }
+  .role mark { background: linear-gradient(transparent 55%, rgba(242,106,33,.45) 55%, rgba(242,106,33,.45) 92%, transparent 92%); color: inherit; padding: 0 1mm; }
+  .hand { font: 700 13pt/1.15 'Caveat', cursive; color: var(--blue); }
+  .keys { margin: 1.6mm 0 0; font-size: 8.6pt; font-weight: 700; color: var(--muted); }
+  .lead { margin: 4mm 0 0; font-size: 9.8pt; }
+  h2 {
+    margin: 6mm 0 2.5mm; font: 800 10.5pt 'Unbounded', sans-serif; color: var(--ink);
+    display: flex; align-items: center; gap: 2.5mm;
+  }
+  h2::after { content: ""; flex: 1; height: .4mm; background: var(--ink); opacity: .15; }
+  .job { margin: 0 0 3.6mm; break-inside: avoid; }
+  .job header { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; }
+  .job b { font: 800 9.8pt 'Manrope', sans-serif; color: var(--ink); }
+  .job .when { flex: none; font: 700 11pt 'Caveat', cursive; color: var(--orange); }
+  .job .where { color: var(--muted); font-weight: 600; }
+  .job ul { margin: 1mm 0 0; padding-left: 4mm; }
+  .job li { margin: 0 0 .6mm; }
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm 5mm; }
+  .projects div { padding: 2.4mm 3mm; background: #fff; box-shadow: 0 .6mm 2mm rgba(15,26,77,.12); }
+  .projects b { display: block; color: var(--ink); font-size: 9.2pt; }
+  .projects span { font-size: 8.4pt; color: var(--muted); }
+  .projects .solo { color: var(--orange); font-weight: 800; }
+  .quote {
+    margin: 5mm 0 0; padding: 3mm 4mm; background: #fff5b8; transform: rotate(.5deg);
+    box-shadow: 0 .6mm 2mm rgba(15,26,77,.12);
+  }
+  .quote p { margin: 0; font: 700 11.5pt/1.2 'Caveat', cursive; color: var(--ink); }
+  .quote footer { margin-top: 1.2mm; font-size: 7.8pt; color: var(--muted); font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="page">
+  <main class="main">
+    <h1>Лера<br>Черногубова</h1>
+    <p class="role"><mark>AI Creator</mark> · AI-художник и аниматор</p>
+    <p class="keys">Генеративный ИИ · AI-анимация · нейросетевой дизайн · промпт-инжиниринг</p>
+    <p class="hand">реклама и мультфильмы с помощью нейросетей</p>
+    <p class="lead">Генерирую кадры, оживляю их и собираю ролик — от идеи и раскадровки до монтажа и звука. Четыре года в графическом дизайне и ИИ: начинала иллюстратором, поэтому смотрю на кадр глазами художника, а не только через промпт. Автор модуля «ИИ-мультфильм» в курсе VideoSmile.</p>
+
+    <h2>Опыт работы</h2>
+    <div class="job">
+      <header><b>AI Creator <span class="where">— ARTEKI STUDIO, Минск</span></b><span class="when">08.2024 — настоящее время</span></header>
+      <ul>
+        <li>Рекламные и вирусные ролики для брендов: генерация кадров, анимация, монтаж.</li>
+        <li>Работа в команде над «Беловежской пущей» — первым <span class="nw">ИИ-мультфильмом</span> в прокате.</li>
+        <li>Пайплайны в ComfyUI для единого стиля персонажей и локаций.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <header><b>Автор модуля онлайн-курса <span class="where">— VideoSmile</span></b><span class="when">2026</span></header>
+      <ul>
+        <li>Модуль «ИИ-мультфильм» из 15 уроков в курсе «Нейросети для дизайна и видео»: программа, наполнение уроков и учебный мультфильм.</li>
+        <li>Ролик-тест нейросетей для мультипликации (Veo, Kling, Grok, Seedance) на YouTube-канале VideoSmile.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <header><b>Графический дизайнер <span class="where">— фриланс</span></b><span class="when">2022 — 2024</span></header>
+      <ul>
+        <li>«Взял мяч»: инфографика и обложки для трансляций Олимпиады-2024, логотипы рубрик «Теннис Лаб» и «Летняя лига UBA», презентации.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <header><b>Иллюстратор <span class="where">— APVB</span></b><span class="when">09.2021 — 09.2022</span></header>
+      <ul>
+        <li>NFT-карточки белорусских спортсменов, лендинги на Tilda, брендинг.</li>
+      </ul>
+    </div>
+
+    <h2>Избранные работы</h2>
+    <div class="projects">
+      <div><b>PlayStation VR2</b><span>концепт рекламы · <span class="solo">сделано самостоятельно</span></span></div>
+      <div><b>«Красная Шапочка» в новом сеттинге</b><span>мультфильм · <span class="solo">сделано полностью самостоятельно</span></span></div>
+      <div><b>ENOTIK · PROSUSHI · JGGL</b><span>реклама для соцсетей · ARTEKI</span></div>
+      <div><b>Персонажи в ComfyUI</b><span>серия артов</span></div>
+    </div>
+
+    <blockquote class="quote">
+      <p>«К работам всегда подходила креативно и с душой. Если видела другие (более эффективные или эффектные) технические решения — всегда предлагала».</p>
+      <footer>— Елена Абраменко, HRBP · AI &amp; IT Project Manager, руководитель</footer>
+    </blockquote>
+  </main>
+
+  <aside class="side">
+    <figure class="photo"><img src="../assets/img/photos/lera.webp" alt=""></figure>
+
+    <h3>Контакты</h3>
+    <ul class="contacts">
+      <li>Telegram: <a href="https://t.me/leracherno">@leracherno</a></li>
+      <li>Email: <a href="mailto:lerachern@inbox.ru">lerachern@inbox.ru</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/lera-ai-creator/">linkedin.com/in/<br>lera-ai-creator</a></li>
+      <li>Город: Минск<small>офис в Минске или удалённо</small></li>
+    </ul>
+
+    <h3>Инструменты: нейросети</h3>
+    <ul class="chips">
+      <li>ComfyUI</li><li>Stable Diffusion</li><li>Midjourney</li><li>Kling</li><li>Veo</li>
+      <li>Seedance</li><li>Runway</li><li>Sora</li><li>Grok</li>
+    </ul>
+    <h3>Инструменты: графика</h3>
+    <ul class="chips classic">
+      <li>Photoshop</li><li>Illustrator</li><li>Figma</li><li>InDesign</li>
+    </ul>
+
+    <h3>Навыки</h3>
+    <ul class="skills">
+      <li>Сценарий и раскадровка</li>
+      <li>Персонажи и локации с единым стилем</li>
+      <li>Генерация кадров и <span class="nw">image-to-video</span></li>
+      <li>Промпт-инжиниринг</li>
+      <li>Монтаж, озвучка, саунд-дизайн</li>
+      <li>Иллюстрация и брендинг</li>
+      <li>Обучение команды работе с ИИ</li>
+    </ul>
+
+    <h3>Образование</h3>
+    <ul><li>МГПТК декоративно-прикладного искусства, Минск<small>2021–2022</small></li></ul>
+
+    <p class="status"><i></i>Открыта к работе: офис в Минске или удалённо из любой точки</p>
+  </aside>
+</div>
+</body>
+</html>
