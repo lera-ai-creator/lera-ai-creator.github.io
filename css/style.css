@@ -573,3 +573,17 @@ section[id] { scroll-margin-top: 84px; }
   .ad__who { font-size: 17px; }
   .ad .play { width: 44px; height: 44px; }
 }
+
+/* ---------- плотнее заголовки и блок курса ---------- */
+.section-title { line-height: 1.05; }
+.section-head { gap: 2px 24px; margin-bottom: 24px; }
+.section-head .hand { margin: 0; }
+.course::before { display: none; }                   /* без полоски скотча над курсом */
+.hood-block .case { margin-bottom: 20px; }
+.connector { margin: 0 0 14px; }
+.course { margin-bottom: 40px; }
+.pipeline { margin: 0 0 clamp(48px, 7vw, 88px); }
+@media (max-width: 960px) {
+  .pipeline { margin-top: 0; }
+  .section-head { margin-bottom: 18px; }
+}
