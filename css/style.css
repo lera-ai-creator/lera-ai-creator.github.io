@@ -609,3 +609,21 @@ section[id] { scroll-margin-top: 84px; }
   .stack__row { grid-template-columns: 1fr; padding: 10px 0; }
   .stack__chips li { font-size: 12.5px; padding: 3px 9px; }
 }
+
+/* ---------- этапы мультфильма: компактные стикеры в строку ---------- */
+.pipeline {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+  max-width: 900px; margin: 0 auto clamp(40px, 6vw, 72px);
+}
+.pipeline li {
+  display: inline-flex; align-items: baseline; gap: 6px;
+  padding: 5px 12px 6px; font-size: 20px; line-height: 1.1;
+  box-shadow: 0 2px 6px rgba(15, 26, 77, .12);
+}
+.pipeline b { display: inline; margin: 0; font-size: 11px; }
+@media (max-width: 960px) { .pipeline { margin-top: 0; } }
+@media (max-width: 520px) {
+  .pipeline { gap: 6px; }
+  .pipeline li { padding: 4px 9px 5px; font-size: 17px; }
+  .pipeline b { font-size: 10px; }
+}
