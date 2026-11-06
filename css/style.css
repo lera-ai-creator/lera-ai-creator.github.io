@@ -234,6 +234,7 @@ a { color: inherit; }
 .badge--spec { background: var(--ink); color: #fff; }
 .badge--solo { background: var(--orange); color: #fff; }
 .badge--soon { background: #ffe66b; color: var(--ink); }
+.badge--live { background: var(--green); color: #fff; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
 .tags li {
