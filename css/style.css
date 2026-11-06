@@ -434,13 +434,14 @@ a { color: inherit; }
 
 /* ---------- стек инструментов ---------- */
 .stack { max-width: 1280px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) var(--gutter) 0; }
-.stack__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 3vw, 32px); align-items: start; }
+.stack__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 960px; margin: 0 auto; gap: clamp(18px, 3vw, 32px); align-items: start; }
 .stack__group {
   position: relative; padding: 26px 24px 22px; background: #fff; box-shadow: var(--shadow);
 }
 .stack__group:nth-child(1) { transform: rotate(-.8deg); }
 .stack__group:nth-child(2) { transform: rotate(.6deg); }
 .stack__group:nth-child(3) { transform: rotate(-.4deg); }
+.stack__group:nth-child(4) { transform: rotate(.8deg); }
 .stack__group::before {
   content: ""; position: absolute; top: -12px; left: 50%; width: 96px; height: 24px;
   transform: translateX(-50%) rotate(-3deg); background: rgba(214, 186, 140, .75);
@@ -536,3 +537,39 @@ section[id] { scroll-margin-top: 84px; }
 .case__text .badge + .badge { margin-left: 6px; }
 .course__logo { display: block; width: 150px; height: auto; margin: 0 0 16px; border-radius: 10px; transform: rotate(-2deg); box-shadow: var(--shadow); }
 .ad__logo { display: inline-block; height: 26px; width: auto; vertical-align: middle; }
+
+/* ---------- спокойные размеры: работы не на всю ширину, чтобы не «били в лицо» ---------- */
+.case, .case--reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.case__media { width: 100%; max-width: 540px; justify-self: end; }
+.case--reverse .case__media { justify-self: start; }
+.ads__grid { grid-template-columns: repeat(auto-fit, minmax(200px, 270px)); }
+.arts { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 980px; margin: 0 auto; }
+.d-logos, .d-grid { max-width: 1000px; margin-left: auto; margin-right: auto; }
+.d-tile--wide { max-width: 720px; }
+.yt { max-width: 420px; }
+
+@media (max-width: 960px) {
+  .case, .case--reverse { grid-template-columns: 1fr; }
+  .case__media, .case--reverse .case__media { max-width: 460px; width: 88%; justify-self: center; }
+  .collage { width: 92%; margin-left: auto; margin-right: auto; }
+  .d-grid > * { width: 90%; justify-self: center; }
+  .yt { margin: 0 auto; }
+}
+@media (max-width: 520px) {
+  .ads__grid .ad { flex-basis: 62%; }
+  .arts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .art { padding: 5px; }
+  .d-tile--wide { width: 92%; margin: 0 auto; }
+}
+@media (max-width: 520px) {
+  /* два рекламных ролика — рядом, без карусели */
+  .ads__grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;
+    overflow: visible; margin: 0; padding: 12px 0 0;
+  }
+  .ads__grid .ad { flex: none; }
+  .ad figcaption { padding: 8px 2px 10px; font-size: 13px; }
+  .ad figcaption b { font-size: 14px; }
+  .ad__who { font-size: 17px; }
+  .ad .play { width: 44px; height: 44px; }
+}
