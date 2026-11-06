@@ -287,7 +287,7 @@ a { color: inherit; }
 .yt__text b { display: block; color: var(--ink); font-size: 17px; }
 
 /* реклама — три вертикальных ролика */
-.ads__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 44px); }
+.ads__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 380px)); justify-content: center; gap: clamp(20px, 4vw, 64px); }
 .ad .media video { aspect-ratio: 9 / 16; }
 .ad .play { width: 56px; height: 56px; }
 .ad figcaption { font-family: var(--f-body); font-size: 15px; line-height: 1.4; padding: 12px 6px 14px; color: var(--text); }
