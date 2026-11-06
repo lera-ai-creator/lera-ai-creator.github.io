@@ -651,3 +651,9 @@ section[id] { scroll-margin-top: 84px; }
   .collage { margin-bottom: 40px; }
 }
 .section-head { row-gap: 10px; }
+
+/* ---------- лаборатория: 6 артов, 3 в ряд; дизайн: презентация и стикеры рядом ---------- */
+.arts { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 760px; }
+.lab__task { max-width: 640px; margin: -6px 0 22px; color: var(--muted); }
+.d-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 3vw, 36px); align-items: start; max-width: 1000px; margin: 0 auto; }
+@media (max-width: 700px) { .d-pair { grid-template-columns: 1fr; max-width: 460px; } }

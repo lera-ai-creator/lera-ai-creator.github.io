@@ -46,7 +46,7 @@
 
   <link rel="preload" href="assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="css/style.css?v=36">
+  <link rel="stylesheet" href="css/style.css?v=37">
 </head>
 <body>
 
@@ -238,37 +238,30 @@
     <section class="lab" id="lab">
       <header class="section-head">
         <h2 class="section-title">Лаборатория</h2>
-        <p class="hand">арты и эксперименты в ComfyUI · нажми, чтобы увеличить</p>
+        <p class="hand">серия персонажей в едином стиле · ComfyUI</p>
       </header>
+
+      <p class="lab__task">Задача — придумать набор персонажей, которые выглядят как одна вселенная: общий материал, свет и характер. Собран пайплайн в ComfyUI, который держит стиль от кадра к кадру.</p>
 
       <!-- Арты. Новый арт = скопировать <button> и поменять путь к картинке. -->
       <div class="arts" id="arts-grid">
-        <button class="art polaroid polaroid--flow js-zoom tilt-l" data-img="assets/img/lab/art-1.webp" aria-label="Открыть арт 1">
-          <img width="1200" height="900" src="assets/img/lab/art-1.webp" alt="Персонаж, созданный в ComfyUI — арт 1" loading="lazy">
+        <button class="art polaroid polaroid--flow js-zoom tilt-l" data-img="assets/img/lab/art-2.webp" data-title="Серия персонажей · ComfyUI" aria-label="Открыть арт 1">
+          <img width="1200" height="900" src="assets/img/lab/art-2.webp" alt="Персонаж из серии в едином стиле, ComfyUI — арт 1" loading="lazy">
         </button>
-        <button class="art polaroid polaroid--flow js-zoom tilt-r" data-img="assets/img/lab/art-2.webp" aria-label="Открыть арт 2">
-          <img width="1200" height="900" src="assets/img/lab/art-2.webp" alt="Персонаж, созданный в ComfyUI — арт 2" loading="lazy">
+        <button class="art polaroid polaroid--flow js-zoom tilt-r" data-img="assets/img/lab/art-7.webp" data-title="Серия персонажей · ComfyUI" aria-label="Открыть арт 2">
+          <img width="1174" height="1200" src="assets/img/lab/art-7.webp" alt="Персонаж из серии в едином стиле, ComfyUI — арт 2" loading="lazy">
         </button>
-        <button class="art polaroid polaroid--flow js-zoom tilt-s" data-img="assets/img/lab/art-3.webp" aria-label="Открыть арт 3">
-          <img width="1200" height="734" src="assets/img/lab/art-3.webp" alt="Персонаж, созданный в ComfyUI — арт 3" loading="lazy">
+        <button class="art polaroid polaroid--flow js-zoom tilt-s" data-img="assets/img/lab/art-6.webp" data-title="Серия персонажей · ComfyUI" aria-label="Открыть арт 3">
+          <img width="1174" height="1200" src="assets/img/lab/art-6.webp" alt="Персонаж из серии в едином стиле, ComfyUI — арт 3" loading="lazy">
         </button>
-        <button class="art polaroid polaroid--flow js-zoom tilt-l" data-img="assets/img/lab/art-5.webp" aria-label="Открыть арт 4">
-          <img width="1174" height="1200" src="assets/img/lab/art-5.webp" alt="Персонаж, созданный в ComfyUI — арт 4" loading="lazy">
+        <button class="art polaroid polaroid--flow js-zoom tilt-l" data-img="assets/img/lab/art-8.webp" data-title="Серия персонажей · ComfyUI" aria-label="Открыть арт 4">
+          <img width="1174" height="1200" src="assets/img/lab/art-8.webp" alt="Персонаж из серии в едином стиле, ComfyUI — арт 4" loading="lazy">
         </button>
-        <button class="art polaroid polaroid--flow js-zoom tilt-r" data-img="assets/img/lab/art-6.webp" aria-label="Открыть арт 5">
-          <img width="1174" height="1200" src="assets/img/lab/art-6.webp" alt="Персонаж, созданный в ComfyUI — арт 5" loading="lazy">
+        <button class="art polaroid polaroid--flow js-zoom tilt-r" data-img="assets/img/lab/art-3.webp" data-title="Серия персонажей · ComfyUI" aria-label="Открыть арт 5">
+          <img width="1200" height="734" src="assets/img/lab/art-3.webp" alt="Персонаж из серии в едином стиле, ComfyUI — арт 5" loading="lazy">
         </button>
-        <button class="art polaroid polaroid--flow js-zoom tilt-s" data-img="assets/img/lab/art-7.webp" aria-label="Открыть арт 6">
-          <img width="1174" height="1200" src="assets/img/lab/art-7.webp" alt="Персонаж, созданный в ComfyUI — арт 6" loading="lazy">
-        </button>
-        <button class="art polaroid polaroid--flow js-zoom tilt-l" data-img="assets/img/lab/art-8.webp" aria-label="Открыть арт 7">
-          <img width="1174" height="1200" src="assets/img/lab/art-8.webp" alt="Персонаж, созданный в ComfyUI — арт 7" loading="lazy">
-        </button>
-        <button class="art polaroid polaroid--flow js-zoom tilt-r" data-img="assets/img/lab/art-9.webp" aria-label="Открыть арт 8">
-          <img width="1174" height="1200" src="assets/img/lab/art-9.webp" alt="Персонаж, созданный в ComfyUI — арт 8" loading="lazy">
-        </button>
-        <button class="art polaroid polaroid--flow js-zoom tilt-s" data-img="assets/img/lab/art-4.webp" aria-label="Открыть арт 9">
-          <img width="813" height="1200" src="assets/img/lab/art-4.webp" alt="Персонаж, созданный в ComfyUI — арт 9" loading="lazy">
+        <button class="art polaroid polaroid--flow js-zoom tilt-s" data-img="assets/img/lab/art-5.webp" data-title="Серия персонажей · ComfyUI" aria-label="Открыть арт 6">
+          <img width="1174" height="1200" src="assets/img/lab/art-5.webp" alt="Персонаж из серии в едином стиле, ComfyUI — арт 6" loading="lazy">
         </button>
       </div>
     </section>
@@ -307,35 +300,20 @@
           </figure>
       </div>
 
-      <div class="d-grid">
-          <figure class="polaroid polaroid--flow d-tile d-tile--big tilt-s">
+      <div class="d-pair">
+          <figure class="polaroid polaroid--flow d-tile tilt-l">
             <button class="media js-zoom" data-img="assets/img/design/slides.webp" data-title="Презентация игрока · Awer Mabil" aria-label="Открыть: Презентация игрока · Awer Mabil">
               <img width="1600" height="906" src="assets/img/design/slides.webp" alt="Презентация игрока · Awer Mabil" loading="lazy">
             </button>
             <figcaption>Презентация игрока · Awer Mabil</figcaption>
           </figure>
-        <div class="d-stack">
           <figure class="polaroid polaroid--flow d-tile tilt-r">
-            <button class="media js-zoom" data-img="assets/img/design/nft.webp" data-title="NFT-карточки белорусских спортсменов · APVB, 2021" aria-label="Открыть: NFT-карточки белорусских спортсменов · APVB, 2021">
-              <img width="1600" height="650" src="assets/img/design/nft.webp" alt="NFT-карточки белорусских спортсменов · APVB, 2021" loading="lazy">
-            </button>
-            <figcaption>NFT-карточки белорусских спортсменов · APVB, 2021</figcaption>
-          </figure>
-          <figure class="polaroid polaroid--flow d-tile tilt-l">
-            <button class="media js-zoom" data-img="assets/img/design/move-formats.webp" data-title="MOVE · форматы для соцсетей и билбордов" aria-label="Открыть: MOVE · форматы для соцсетей и билбордов">
-              <img width="1600" height="818" src="assets/img/design/move-formats.webp" alt="MOVE · форматы для соцсетей и билбордов" loading="lazy">
-            </button>
-            <figcaption>MOVE · форматы для соцсетей и билбордов</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <figure class="polaroid polaroid--flow d-tile d-tile--wide tilt-s">
             <button class="media js-zoom" data-img="assets/img/design/stickers.webp" data-title="Стикеры: мой личный стикерпак и «Летняя лига 2024»" aria-label="Открыть: Стикеры: мой личный стикерпак и «Летняя лига 2024»">
               <img width="1600" height="729" src="assets/img/design/stickers.webp" alt="Стикеры: мой личный стикерпак и «Летняя лига 2024»" loading="lazy">
             </button>
             <figcaption>Стикеры: мой личный стикерпак и «Летняя лига 2024»</figcaption>
           </figure>
+      </div>
     </section>
 
     <section class="about" id="about">
@@ -348,7 +326,7 @@
         <div class="about__left">
           <div class="paper">
             <p>Привет! Меня зовут Лера. Я AI-художник и аниматор: генерирую кадры, оживляю их и собираю ролики — рекламу и мультфильмы.</p>
-            <p>Начинала как иллюстратор и графический дизайнер, поэтому смотрю на кадр глазами художника, а не только через промпт. Инструменты обновляются каждый день — я обновляюсь вместе с ними.</p>
+            <p>Начинала как иллюстратор и графический дизайнер, поэтому смотрю на кадр глазами художника, а не только через промпт.</p>
             <p class="paper__note">90% моих работ под NDA, поэтому здесь — то, что можно показать.</p>
           </div>
 
