@@ -317,7 +317,7 @@ a { color: inherit; }
 .lab { max-width: 1280px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) var(--gutter) 0; }
 .arts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.5vw, 32px); }
 .art { padding: 8px; border: 0; cursor: zoom-in; }
-.art img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.art img { width: 100%; height: auto; }
 
 .player__img { display: none; max-width: 100%; max-height: 82vh; margin: 0 auto; box-shadow: 0 20px 60px rgba(0, 0, 0, .5); }
 .player--image { width: auto; max-width: 92vw; }
@@ -373,7 +373,7 @@ a { color: inherit; }
 .d-tile .media img { width: 100%; height: auto; }
 .d-tile figcaption { font-size: 19px; }
 .d-logos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 2.5vw, 28px); margin-bottom: clamp(40px, 6vw, 64px); }
-.d-logos .media img { aspect-ratio: 2.1 / 1; object-fit: cover; }
+.d-logos .media img { height: auto; }
 .d-grid { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 40px); align-items: start; margin-bottom: clamp(32px, 5vw, 56px); }
 .d-stack { display: grid; gap: clamp(20px, 3vw, 36px); }
 .d-tile--wide { max-width: 1080px; margin: 0 auto; }
@@ -399,7 +399,7 @@ a { color: inherit; }
 .paper__note { font-family: var(--f-hand); font-size: 24px; color: var(--blue); }
 
 .about__photos { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
-.about__photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.about__photos img { width: 100%; height: auto; }
 
 .timeline { position: relative; margin: 0; padding: 0 0 0 30px; list-style: none; }
 .timeline::before {
@@ -627,3 +627,27 @@ section[id] { scroll-margin-top: 84px; }
   .pipeline li { padding: 4px 9px 5px; font-size: 17px; }
   .pipeline b { font-size: 10px; }
 }
+
+/* ---------- рамки не обрезают картинку: всегда видно изображение целиком ---------- */
+.polaroid > img:not(.tape), .media img { object-fit: contain; height: auto; }
+.arts { align-items: start; }
+.about__photos { align-items: start; }
+.d-logos { align-items: start; }
+
+/* ---------- текст ни на что не наезжает ---------- */
+.section-head .hand { margin-top: 6px; }
+.section-title, .hero__name { overflow-wrap: break-word; }
+@media (max-width: 960px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hand--arrow { left: 0; top: -9%; font-size: 20px; }
+}
+@media (max-width: 520px) {
+  .section-title { font-size: clamp(28px, 8.6vw, 40px); }
+  .hero__name { font-size: clamp(30px, 10vw, 44px); }
+}
+@media (max-width: 380px) {
+  .p-photo { top: -9%; width: 31%; }
+  .p-phone { bottom: -14%; width: 24%; }
+  .collage { margin-bottom: 40px; }
+}
+.section-head { row-gap: 10px; }
